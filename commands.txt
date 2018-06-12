@@ -1,0 +1,6 @@
+phenix.fetch_pdb 1yjp --mtz
+qr.finalise 1yjp.pdb
+phenix.refine 1yjp_complete.pdb 1yjp.mtz
+phenix.pdbtools modify.selection='element H' occupancies.set=0.0 1yjp_complete.pdb
+phenix.geometry_minimization 1yjp_complete.pdb_modified.pdb use_neutron_distances=True output_file_name_prefix=1yjp_complete.pdb_modified selection="element H or element D" write_geo_file=False fix_rotamer_outliers=False silent=True correct_hydrogens=True
+
